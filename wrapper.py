@@ -7,7 +7,7 @@ __status__ = "Development"
 
 # Built-in libraries
 from argparse import ArgumentParser
-from libs.configfile import ConfigFile
+from lib.configfile import ConfigFile
 import os, csv, re
 
 # Pipy libraries

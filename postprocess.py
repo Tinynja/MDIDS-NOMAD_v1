@@ -16,12 +16,12 @@ from tabulate import tabulate
 import numpy as np
 
 # User libraries
-from libs.logger import Logger
-from libs.debugger import Debugger
-from libs.progressprinter import ProgressPrinter
-from libs.configfile import *
-from libs.useful_functions import *
-from libs.multiplot import *
+from lib.logger import Logger
+from lib.debugger import Debugger
+from lib.progressprinter import ProgressPrinter
+from lib.configfile import *
+from lib.useful_functions import *
+from lib.multiplot import *
 
 
 # Parse input arguments
