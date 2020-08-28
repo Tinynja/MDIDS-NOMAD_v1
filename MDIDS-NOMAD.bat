@@ -3,7 +3,6 @@ setlocal EnableDelayedExpansion
 title MDIDS-NOMAD Runner
 
 :: Deleting files and create folder
-mkdir Logs 2> NUL
 del Logs\MDIDS-NOMAD_results.log 2> NUL
 
 echo ~~~~ NOMAD Optimization ~~~~

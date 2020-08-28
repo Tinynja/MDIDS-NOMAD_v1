@@ -64,8 +64,6 @@ if args.save: os.makedirs(args.EXPORT, exist_ok=True)
 printlog = Logger(log_file=args.EXPORT+'solution.txt', status=args.save)
 # Debugger helps to debug the code py printing extra information and pausing the code for checks
 debug = Debugger(args.DEBUG)
-# ProgressPrinter makes it easy to have progress bars
-progressprint = ProgressPrinter()
 
 
 # history: [bbe1, bbe2, bbe3...]
