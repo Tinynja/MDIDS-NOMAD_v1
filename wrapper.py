@@ -34,6 +34,7 @@ for var in config.params('output'):
 	target = np.append(target, var['target'])
 
 # Execute MDIDS
+os.makedirs(os.path.split(args.LOG)[0], exist_ok=True)
 os.system(f'MDIDSGTconsole {config.main()["master_file"]} Logs/MDIDS_output.txt -OPT {args.INPUT_FILE} Logs/MDIDS_opt-output.txt > Logs/MDIDS_display.log')
 
 # Reading the MDIDS output values of SFC, OPR, Thrust

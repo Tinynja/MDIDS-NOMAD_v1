@@ -59,8 +59,7 @@ if not args.READ_EXPORT:
 	assert os.path.isfile(args.HISTORY), f'HISTORY_FILE "{args.HISTORY}" not found'
 	assert os.path.isfile(args.MDIDS), f'MDIDS results file "{args.MDIDS}" not found'
 
-if args.save:
-	os.makedirs(args.EXPORT, exist_ok=True)
+if args.save: os.makedirs(args.EXPORT, exist_ok=True)
 # Logger prints to sys.stdout and also logs the print to the log file.  Prevents duplicate code.
 printlog = Logger(log_file=args.EXPORT+'solution.txt', status=args.save)
 # Debugger helps to debug the code py printing extra information and pausing the code for checks
