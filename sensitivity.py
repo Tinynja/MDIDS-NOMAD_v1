@@ -88,7 +88,6 @@ if not args.DEBUG: progressprint.stop('Done!')
 os.remove('sensitivity.input')
 
 # The sensitivity matrix has been generated, now save the results in CSV files and plot the results
-os.makedirs(args.EXPORT, exist_ok=True)
 for o,matrix in enumerate(sens_matrix):
 	# Save each output's sensitivity matrix in a CSV file
 	header = list(chain.from_iterable((i, output_names[o]) for i in input_names))
@@ -99,6 +98,7 @@ for o,matrix in enumerate(sens_matrix):
 		else:
 			sens.plot(matrix[2*i], matrix[2*i+1], side='bottom', label=input_names[i])
 	if args.save:
+		os.makedirs(args.EXPORT, exist_ok=True)
 		csv_write(args.EXPORT + 'sensitivity_' + output_names[o] + '.csv', list(zip_longest(*matrix)), header=header, delimiter=args.DELIMITER)
 		sens.figure.savefig(args.EXPORT + 'sensitivity_' + output_names[o] + '.png')
 
