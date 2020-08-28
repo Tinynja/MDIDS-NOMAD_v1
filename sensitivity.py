@@ -88,18 +88,18 @@ if not args.DEBUG: progressprint.stop('Done!')
 os.remove('sensitivity.input')
 
 # The sensitivity matrix has been generated, now save the results in CSV files and plot the results
-if args.save:
-	os.makedirs(args.EXPORT, exist_ok=True)
-	for o,matrix in enumerate(sens_matrix):
-		# Save each output's sensitivity matrix in a CSV file
-		header = list(chain.from_iterable((i, output_names[o]) for i in input_names))
+os.makedirs(args.EXPORT, exist_ok=True)
+for o,matrix in enumerate(sens_matrix):
+	# Save each output's sensitivity matrix in a CSV file
+	header = list(chain.from_iterable((i, output_names[o]) for i in input_names))
+	sens = MultiPlot(margins=(-1,60,20,20), figsize=(args.FIGSIZE,9/16*args.FIGSIZE))
+	for i in range(int(len(matrix)/2)):
+		if i == 0:
+			sens.plot(matrix[2*i], matrix[2*i+1], side='bottom', main_label=output_names[o], label=input_names[i])
+		else:
+			sens.plot(matrix[2*i], matrix[2*i+1], side='bottom', label=input_names[i])
+	if args.save:
 		csv_write(args.EXPORT + 'sensitivity_' + output_names[o] + '.csv', list(zip_longest(*matrix)), header=header, delimiter=args.DELIMITER)
-		sens = MultiPlot(margins=(-1,60,20,20), figsize=(args.FIGSIZE,9/16*args.FIGSIZE))
-		for i in range(int(len(matrix)/2)):
-			if i == 0:
-				sens.plot(matrix[2*i], matrix[2*i+1], side='bottom', main_label=output_names[o], label=input_names[i])
-			else:
-				sens.plot(matrix[2*i], matrix[2*i+1], side='bottom', label=input_names[i])
 		sens.figure.savefig(args.EXPORT + 'sensitivity_' + output_names[o] + '.png')
 
 # Show the plot if desired
