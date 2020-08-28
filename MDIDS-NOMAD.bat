@@ -24,6 +24,6 @@ echo Elapsed time:  %hh:~1%%time:~2,1%%mm:~1%%time:~2,1%%ss:~1%%time:~8,1%%cc:~1
 echo.
 
 :: Post-processing
-python.exe postprocess.py
+python.exe postprocess.py --sensitivity
 
 pause
