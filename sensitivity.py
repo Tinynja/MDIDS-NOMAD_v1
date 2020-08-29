@@ -45,6 +45,8 @@ progressprint = ProgressPrinter()
 
 # Retrieve the input variables and the sensitivity ranges
 config = ConfigFile(filename=args.CONFIG)
+config.has_param('input', 'sensitivity_range', error_ok=False)
+config.has_param('input', 'sensitivity_npoints', error_ok=False)
 input_names, inputs = config.names('input'), config.params('input')
 output_names, outputs = config.names('output'), config.params('output')
 
