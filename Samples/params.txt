@@ -4,7 +4,7 @@ DIMENSION			NUMBER_OF_INPUT_VARIABLES
 X0					( Var0 Var1 Var2 ... )
 F_TARGET			RELATIVE_ERROR_NORM
 
-BB_EXE	"$python.exe wrapper.py"
+BB_EXE				"$python.exe wrapper.py"
 DISPLAY_STATS		BBE ( SOL ) OBJ
 DISPLAY_DEGREE		1
 HISTORY_FILE		Logs/NOMAD_history.log
