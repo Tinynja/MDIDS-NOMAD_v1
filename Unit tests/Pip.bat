@@ -4,7 +4,7 @@ title Unit test for pip and dependencies
 pip.exe -V > NUL 2>&1
 
 IF %ERRORLEVEL%==0 (
-	echo [SUCCESS] Pip was detected succesfully.
+	echo [SUCCESS] Pip was detected successfully.
 	echo.
 	python.exe -m pip install --upgrade pip
 	pip.exe install -r "Pip\requirements.txt"
